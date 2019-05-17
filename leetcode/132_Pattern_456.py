@@ -40,17 +40,21 @@ class Solution:
 
 #解法二
 class Solution:
-    def find132pattern(self, nums: List[int]) -> bool:
+    def find132pattern( nums) -> bool:
         _min = float('-inf')
         stack = []
         for i in range(len(nums) - 1, -1, -1):
             if nums[i] < _min:
+                print("1")
                 return True
             while stack and nums[i] > stack[-1]:
                 _min = stack.pop()
             stack.append(nums[i])
+        print("2")
         return False
 '''
 执行用时 : 88 ms, 在132 Pattern的Python3提交中击败了60.95% 的用户
 内存消耗 : 14.3 MB, 在132 Pattern的Python3提交中击败了53.70% 的用户
 '''
+a=Solution
+a.find132pattern([4,9,3,8])
